@@ -1,0 +1,309 @@
+:root {
+  /* 背景色 */
+  --bg: #F6F6F6;
+  --sidebar-bg: #FFFFFF;
+
+  /* 表面色层级 */
+  --surface: #FFFFFF;
+  --surface-muted: #F2F2F2;
+  --surface-subtle: #F7F7F7;
+  --surface-2: #EDEDED;
+
+  /* 灰度系统 (8级) */
+  --gray-1: #2B2B2B;
+  --gray-2: #616161;
+  --gray-3: #A4A4A4;
+  --gray-4: #C2C2C2;
+  --gray-5: #D2D2D2;
+  --gray-6: #E6E6E6;
+  --gray-7: #F2F2F2;
+  --gray-8: #F6F6F6;
+
+  /* 边框色 */
+  --border: #E5E5E5;
+  --border-strong: #D2D2D2;
+  --border-light: #F2F2F2;
+
+  /* 文字颜色层级 (4级) */
+  --text: #2B2B2B;
+  --text-muted: #616161;
+  --text-tertiary: #A4A4A4;
+  --text-disabled: #C2C2C2;
+
+  /* 主色 */
+  --primary: #09B83E;
+  --primary-hover: #08A836;
+  --primary-soft: #E6F7EE;
+  --primary-selected: #DEF4E9;
+  --primary-ring: rgba(9, 184, 62, 0.2);
+  --on-primary: #FFFFFF;
+
+  /* Hover 透明度 */
+  --hover-overlay: rgba(0, 0, 0, 0.03);
+
+  /* 输入框 */
+  --input-bg: #F6F6F6;
+  --input-bg-focus: #F6F6F6;
+  --input-border: transparent;
+  --input-border-focus: #09B83E;
+  --input-placeholder: #888888;
+  --input-selected: #E0D9FB;
+
+  /* 功能色 */
+  --danger: #F46363;
+  --success: #07C160;
+  --warning: #EDBE09;
+  --link: #007BFF;
+
+  /* VIP色 */
+  --vip: #8363FF;
+  --vip-soft: #9377FF;
+  --svip: #EE7B11;
+  --svip-soft: #F8AE4F;
+
+  /* 遮罩 */
+  --overlay: rgba(0, 0, 0, 0.5);
+  --overlay-light: rgba(0, 0, 0, 0.32);
+
+  /* 对话框/弹窗 */
+  --dialog-bg: #FFFFFF;
+  --dialog-hover: #F6F6F6;
+
+  /* 圆角 */
+  --radius-1: 4px;
+  --radius-2: 6px;
+  --radius-3: 8px;
+  --radius-4: 12px;
+  --radius-5: 16px;
+  --radius-6: 20px;
+  /* 兼容旧命名 */
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+
+  /* 描边 */
+  --stroke-1: 0.5px;
+
+  /* 阴影 */
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.08);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.12);
+  --focus-ring: 0 0 0 3px rgba(9, 184, 62, 0.18);
+  --shadow-focus: var(--focus-ring);
+
+  /* 间距 */
+  --space-1: 4px;
+  --space-2: 8px;
+  --space-3: 12px;
+  --space-4: 16px;
+  --space-5: 24px;
+  --space-6: 32px;
+
+  /* 动画时长 */
+  --duration-fast: 150ms;
+  --duration: 200ms;
+  --duration-slow: 300ms;
+
+  /* 微光效果 (Shimmer & Glow) */
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(9, 184, 62, 0.12);
+  --glow-primary-soft: 0 0 15px rgba(9, 184, 62, 0.08);
+  --glow-surface: 0 1px 2px rgba(255, 255, 255, 0.6) inset, 0 1px 3px rgba(0, 0, 0, 0.04);
+
+  /* 磨砂玻璃 */
+  --glass-bg: rgba(255, 255, 255, 0.72);
+  --glass-border: rgba(255, 255, 255, 0.5);
+
+  /* 我的页 */
+  --mine-card-bg: #FFFFFF;
+  --mine-card-border: #EFEFEF;
+  --mine-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.04);
+  --mine-member-bg: linear-gradient(180deg, #F9F9F9 0%, #F4F4F4 59%);
+  --mine-world-bg: linear-gradient(90deg, rgba(238, 123, 17, 0.4), #EDEDED);
+
+  /* 首页消息卡片 */
+  --record-card-bg: #FFFFFF;
+  --record-card-hover-bg: #F6F6F6;
+  --record-card-border: rgba(43, 43, 43, 0.08);
+  --record-topic-border: rgba(43, 43, 43, 0.08);
+  --record-topic-icon-bg: rgba(136, 136, 136, 0.12);
+	  --record-detail-main-bg: #FFFFFF;
+	  --record-detail-main-border: rgba(246, 246, 246, 0.8);
+	  --record-detail-content-text: var(--text);
+	  --record-detail-muted-bg: rgba(43, 43, 43, 0.03);
+	  --record-detail-input-bg: #FFFFFF;
+	  --overview-entry-tag-bg: rgba(136, 136, 136, 0.12);
+
+  /* 消息测试后台 */
+  --admin-bg: #F6F6F6;
+  --admin-header-bg: rgba(255, 255, 255, 0.92);
+  --admin-panel-bg: #FFFFFF;
+  --admin-panel-muted-bg: #F7F7F7;
+  --admin-input-bg: #FFFFFF;
+  --admin-input-hover-bg: #FAFAFA;
+  --admin-dialog-bg: #FFFFFF;
+  --admin-border: rgba(43, 43, 43, 0.1);
+  --admin-border-subtle: rgba(43, 43, 43, 0.06);
+  --admin-bubble-bg: #FFFFFF;
+  --admin-bubble-hover-bg: #F7F7F7;
+  --admin-overlay: rgba(0, 0, 0, 0.34);
+  --admin-header-shadow: 0 1px 0 rgba(0, 0, 0, 0.03);
+  --admin-panel-shadow: 0 18px 42px rgba(0, 0, 0, 0.04);
+  --admin-floating-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+  --admin-input-focus-shadow: 0 0 0 3px var(--primary-ring);
+
+  /* 填充透明度 */
+  --fill-1: rgba(136, 136, 136, 0.2);
+  --fill-2: rgba(136, 136, 136, 0.16);
+  --fill-3: rgba(136, 136, 136, 0.12);
+  --fill-4: rgba(136, 136, 136, 0.08);
+
+  /* 标签色 */
+  --tag-orange: #EDBE09;
+  --tag-pink: #F477FF;
+  --tag-purple: #9377FF;
+  --tag-red: #F46363;
+  --tag-green: #66DB79;
+  --tag-blue: #0B8DEF;
+  --tag-cyan: #77D6FF;
+  --tag-yellow: #B9CF60;
+}
+
+:root[data-theme="dark"] {
+  --bg: #111111;
+  --sidebar-bg: #171717;
+  --surface: #1B1B1B;
+  --surface-muted: #242424;
+  --surface-subtle: #202020;
+  --surface-2: #2A2A2A;
+  --gray-1: #F4F4F4;
+  --gray-2: #D5D5D5;
+  --gray-3: #A8A8A8;
+  --gray-4: #777777;
+  --gray-5: #555555;
+  --gray-6: #383838;
+  --gray-7: #242424;
+  --gray-8: #171717;
+  --border: #2D2D2D;
+  --border-strong: #3C3C3C;
+  --border-light: #242424;
+  --text: #F4F4F4;
+  --text-muted: #C8C8C8;
+  --text-tertiary: #8D8D8D;
+  --text-disabled: #6D6D6D;
+  --hover-overlay: rgba(255, 255, 255, 0.06);
+  --input-bg: #1B1B1B;
+  --input-bg-focus: #202020;
+  --input-placeholder: #8D8D8D;
+  --overlay-light: rgba(0, 0, 0, 0.46);
+  --dialog-bg: #1B1B1B;
+  --dialog-hover: #242424;
+  --glass-bg: rgba(27, 27, 27, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --mine-card-bg: #151515;
+  --mine-card-border: transparent;
+  --mine-card-shadow: 0 2px 10px rgba(0, 0, 0, 0.26);
+  --mine-member-bg: linear-gradient(180deg, #262829 0%, #1C1E1F 59%);
+  --mine-world-bg: linear-gradient(90deg, rgba(248, 174, 79, 0.4), #151515);
+  --record-card-bg: #151515;
+  --record-card-hover-bg: #282828;
+  --record-card-border: transparent;
+  --record-topic-border: rgba(255, 255, 255, 0.1);
+  --record-topic-icon-bg: rgba(255, 255, 255, 0.08);
+	  --record-detail-main-bg: #060606;
+	  --record-detail-main-border: rgba(80, 80, 80, 0.21);
+	  --record-detail-content-text: var(--text);
+	  --record-detail-muted-bg: rgba(255, 255, 255, 0.05);
+	  --record-detail-input-bg: #1B1B1B;
+	  --overview-entry-tag-bg: rgba(255, 255, 255, 0.08);
+  --admin-bg: #0F0F0F;
+  --admin-header-bg: rgba(17, 17, 17, 0.9);
+  --admin-panel-bg: #171717;
+  --admin-panel-muted-bg: #1E1E1E;
+  --admin-input-bg: #151515;
+  --admin-input-hover-bg: #1D1D1D;
+  --admin-dialog-bg: #1B1B1B;
+  --admin-border: rgba(255, 255, 255, 0.1);
+  --admin-border-subtle: rgba(255, 255, 255, 0.07);
+  --admin-bubble-bg: #1B1B1B;
+  --admin-bubble-hover-bg: #232323;
+  --admin-overlay: rgba(0, 0, 0, 0.62);
+  --admin-header-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
+  --admin-panel-shadow: 0 18px 46px rgba(0, 0, 0, 0.2);
+  --admin-floating-shadow: 0 22px 58px rgba(0, 0, 0, 0.48);
+  --admin-input-focus-shadow: 0 0 0 3px var(--primary-ring);
+  --fill-1: rgba(255, 255, 255, 0.16);
+  --fill-2: rgba(255, 255, 255, 0.12);
+  --fill-3: rgba(255, 255, 255, 0.08);
+  --fill-4: rgba(255, 255, 255, 0.05);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.28);
+  --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.3);
+  --shadow-lg: 0 12px 30px rgba(0, 0, 0, 0.34);
+}
+
+:root[data-accent="purple"] {
+  --primary: #8363FF;
+  --primary-hover: #7252EE;
+  --primary-soft: #EEE9FF;
+  --primary-selected: #E7E0FF;
+  --primary-ring: rgba(131, 99, 255, 0.22);
+  --input-border-focus: #8363FF;
+  --focus-ring: 0 0 0 3px rgba(131, 99, 255, 0.18);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(131, 99, 255, 0.12);
+  --glow-primary-soft: 0 0 15px rgba(131, 99, 255, 0.08);
+}
+
+:root[data-accent="blue"] {
+  --primary: #0E9DEC;
+  --primary-hover: #0B8DD6;
+  --primary-soft: #E7F4FE;
+  --primary-selected: #DFF0FD;
+  --primary-ring: rgba(14, 157, 236, 0.22);
+  --input-border-focus: #0E9DEC;
+  --focus-ring: 0 0 0 3px rgba(14, 157, 236, 0.18);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(14, 157, 236, 0.12);
+  --glow-primary-soft: 0 0 15px rgba(14, 157, 236, 0.08);
+}
+
+:root[data-accent="pink"] {
+  --primary: #E04DAE;
+  --primary-hover: #CB3F9B;
+  --primary-soft: #FDEBF6;
+  --primary-selected: #FBE2F1;
+  --primary-ring: rgba(224, 77, 174, 0.22);
+  --input-border-focus: #E04DAE;
+  --focus-ring: 0 0 0 3px rgba(224, 77, 174, 0.18);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(224, 77, 174, 0.12);
+  --glow-primary-soft: 0 0 15px rgba(224, 77, 174, 0.08);
+}
+
+:root[data-theme="dark"][data-accent="green"] {
+  --primary-soft: #123322;
+  --primary-selected: #183F2B;
+  --primary-ring: rgba(9, 184, 62, 0.32);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(9, 184, 62, 0.18);
+  --glow-primary-soft: 0 0 15px rgba(9, 184, 62, 0.14);
+}
+
+:root[data-theme="dark"][data-accent="purple"] {
+  --primary-soft: #241F3F;
+  --primary-selected: #302957;
+  --primary-ring: rgba(131, 99, 255, 0.32);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(131, 99, 255, 0.18);
+  --glow-primary-soft: 0 0 15px rgba(131, 99, 255, 0.14);
+}
+
+:root[data-theme="dark"][data-accent="blue"] {
+  --primary-soft: #122D3F;
+  --primary-selected: #173B52;
+  --primary-ring: rgba(14, 157, 236, 0.32);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(14, 157, 236, 0.18);
+  --glow-primary-soft: 0 0 15px rgba(14, 157, 236, 0.14);
+}
+
+:root[data-theme="dark"][data-accent="pink"] {
+  --primary-soft: #3A1E31;
+  --primary-selected: #4A263F;
+  --primary-ring: rgba(224, 77, 174, 0.34);
+  --glow-primary: 0 0 0 1px var(--primary), 0 0 0 4px rgba(224, 77, 174, 0.2);
+  --glow-primary-soft: 0 0 15px rgba(224, 77, 174, 0.15);
+}

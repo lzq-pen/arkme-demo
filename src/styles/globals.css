@@ -1,0 +1,393 @@
+@import "./tokens.css";
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: "PingFang SC", "PingFangSC", "Helvetica Neue", Helvetica, Arial,
+    "Microsoft YaHei", sans-serif;
+  line-height: 1.6;
+}
+
+#root {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.9), transparent 34rem),
+    var(--bg);
+}
+
+:root[data-theme="dark"] #root {
+  background:
+    radial-gradient(circle at top, rgba(255, 255, 255, 0.055), transparent 31rem),
+    linear-gradient(180deg, #0a0a0a 0%, #101010 54%, #080808 100%);
+}
+
+.device-stage {
+  --phone-width: min(393px, calc((100dvh - 96px) * 393 / 852), calc(100vw - 48px));
+  --phone-height: calc(var(--phone-width) * 852 / 393);
+  position: relative;
+  width: var(--phone-width);
+  height: var(--phone-height);
+}
+
+.device-frame {
+  position: absolute;
+  inset: -14px;
+  display: block;
+  border: 10px solid #111;
+  border-radius: 52px;
+  background: #111;
+  box-shadow:
+    0 28px 72px rgba(0, 0, 0, 0.18),
+    0 2px 10px rgba(0, 0, 0, 0.08);
+  pointer-events: none;
+}
+
+:root[data-theme="dark"] .device-frame {
+  border-color: #050505;
+  background: linear-gradient(180deg, #151515 0%, #050505 100%);
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.11),
+    0 30px 84px rgba(0, 0, 0, 0.58),
+    0 0 44px rgba(255, 255, 255, 0.035);
+}
+
+.device-island {
+  position: absolute;
+  top: 13px;
+  left: 50%;
+  width: 114px;
+  height: 34px;
+  transform: translateX(-50%);
+  border-radius: 999px;
+  background: #050505;
+  box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.04);
+}
+
+:root[data-theme="dark"] .device-island {
+  background: #020202;
+  box-shadow:
+    inset 0 0 0 1px rgba(255, 255, 255, 0.075),
+    0 1px 2px rgba(0, 0, 0, 0.45);
+}
+
+.app-screen {
+  width: 100%;
+  height: 100%;
+  border-radius: 42px;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.03) inset;
+}
+
+:root[data-theme="dark"] .app-screen {
+  box-shadow:
+    0 0 0 1px rgba(255, 255, 255, 0.13),
+    0 0 0 1px rgba(255, 255, 255, 0.055) inset,
+    0 18px 52px rgba(0, 0, 0, 0.34);
+}
+
+@media (max-width: 520px), (max-height: 720px) {
+  #root {
+    padding: 0;
+  }
+
+  .device-stage {
+    width: 100vw;
+    height: 100dvh;
+  }
+
+  .device-frame,
+  .device-island {
+    display: none;
+  }
+
+  .app-screen {
+    border-radius: 0;
+    box-shadow: none;
+  }
+}
+
+input,
+button,
+textarea {
+  font-family: inherit;
+}
+
+:focus-visible {
+  outline: none;
+  box-shadow: var(--shadow-focus);
+}
+
+.admin-message-textarea:focus,
+.admin-message-textarea:focus-visible {
+  outline: none;
+  box-shadow: none !important;
+}
+
+/* ============================================
+   Ethereal Minimalism - 全局氛围层
+   ============================================ */
+
+/* 噪点纹理背景 - 增加纸张质感 */
+.bg-noise::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.7' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* 磨砂玻璃效果 */
+.glass {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* 光影分割线 - 替代灰色实线边框 */
+.border-glow {
+  border-color: transparent;
+  box-shadow:
+    1px 0 0 0 rgba(255, 255, 255, 0.8) inset,
+    -1px 0 0 0 rgba(0, 0, 0, 0.03);
+}
+
+/* ============================================
+   微光效果 (Shimmer & Glow)
+   ============================================ */
+
+/* 输入框聚焦光晕 */
+.focus-glow:focus,
+.focus-glow:focus-within {
+  box-shadow: var(--glow-primary), var(--glow-primary-soft);
+}
+
+/* 选中态发光 */
+.selected-glow {
+  box-shadow:
+    var(--glow-surface),
+    0 0 12px rgba(9, 184, 62, 0.06);
+}
+
+/* 按钮流光效果 */
+.btn-shimmer {
+  position: relative;
+  overflow: hidden;
+}
+
+.btn-shimmer::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.2) 50%,
+    transparent 100%
+  );
+  transition: left 0.5s ease;
+}
+
+.btn-shimmer:hover::before {
+  left: 100%;
+}
+
+/* ============================================
+   灵动感 - 动画 (Agility)
+   ============================================ */
+
+/* 淡入上移 */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* 淡入缩放 */
+@keyframes fade-in-scale {
+  from {
+    opacity: 0;
+    transform: scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* 骨架屏脉冲 */
+@keyframes skeleton-pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.4;
+  }
+}
+
+/* 流光划过 */
+@keyframes shimmer {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+/* 微弹效果 */
+@keyframes bounce-subtle {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-2px);
+  }
+}
+
+/* 慢速呼吸动画 - 灵感火花 */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.7;
+    transform: scale(0.95);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 3s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* 氛围光斑漂浮动画 */
+@keyframes float-slow {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10px, -15px) scale(1.05);
+  }
+  50% {
+    transform: translate(-5px, 10px) scale(0.95);
+  }
+  75% {
+    transform: translate(-15px, -5px) scale(1.02);
+  }
+}
+
+@keyframes float-slow-reverse {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(-10px, 10px) scale(0.98);
+  }
+  50% {
+    transform: translate(15px, -10px) scale(1.03);
+  }
+  75% {
+    transform: translate(5px, 15px) scale(0.97);
+  }
+}
+
+.animate-float-slow {
+  animation: float-slow 15s ease-in-out infinite;
+}
+
+.animate-float-slow-reverse {
+  animation: float-slow-reverse 18s ease-in-out infinite;
+}
+
+/* 消息流体入场动画 */
+@keyframes slide-up-fade {
+  from {
+    opacity: 0;
+    transform: translateY(10px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-slide-up-fade {
+  animation: slide-up-fade 0.4s cubic-bezier(0.2, 0.9, 0.2, 1) forwards;
+}
+
+/* ============================================
+   交互状态类
+   ============================================ */
+
+/* 可点击元素的 active 回弹 */
+.clickable {
+  transition: transform var(--duration-fast) ease-out;
+}
+
+.clickable:active {
+  transform: scale(0.98);
+}
+
+/* 平滑悬停背景 */
+.hover-smooth {
+  transition: background-color var(--duration) ease-out;
+}
+
+/* 消息入场动画类 */
+.animate-fade-in-up {
+  animation: fade-in-up var(--duration-slow) ease-out forwards;
+}
+
+.animate-fade-in-scale {
+  animation: fade-in-scale var(--duration) ease-out forwards;
+}
+
+/* 骨架屏动画 */
+.animate-skeleton {
+  animation: skeleton-pulse 1.5s ease-in-out infinite;
+}
+
+/* ============================================
+   工具类
+   ============================================ */
+
+/* 交错动画延迟 */
+.stagger-1 { animation-delay: 30ms; }
+.stagger-2 { animation-delay: 60ms; }
+.stagger-3 { animation-delay: 90ms; }
+.stagger-4 { animation-delay: 120ms; }
+.stagger-5 { animation-delay: 150ms; }
+.stagger-6 { animation-delay: 180ms; }
+.stagger-7 { animation-delay: 210ms; }
+.stagger-8 { animation-delay: 240ms; }
+.stagger-9 { animation-delay: 270ms; }
+.stagger-10 { animation-delay: 300ms; }
